@@ -3,9 +3,11 @@ import requests
 from requests import Response
 from PIL import Image
 import imagesize
+from dotenv import load_dotenv
 from transformers import BlipProcessor, BlipForConditionalGeneration, MarianMTModel, MarianTokenizer
 from utils import *
 
+load_dotenv()
 
 class Tools:
     def __init__(self):
@@ -17,6 +19,8 @@ class Tools:
 
         self.translate_tokenizer = MarianTokenizer.from_pretrained("Helsinki-NLP/opus-mt-en-zh")
         self.translate_model = MarianMTModel.from_pretrained("Helsinki-NLP/opus-mt-en-zh")
+
+        self.x_api_key = os.getenv('X-API-KEY')
 
     def _tools(self):
         tools = [
@@ -54,7 +58,7 @@ class Tools:
         payload = json.dumps({"q": search_query})
 
         headers = {
-            'X-API-KEY': '0d15d366db01ca14061edb164e0704c8fa3243d3',
+            'X-API-KEY': self.x_api_key,
             'Content-Type': 'application/json'
         }
 
