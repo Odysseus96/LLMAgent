@@ -92,15 +92,6 @@ class Tools:
         return caption
 
 if __name__ == '__main__':
-    # url = 'https://google.serper.dev/search'
-    # search_query = "天为什么是蓝色的"
-    # payload = json.dumps({"q": search_query})
-    # headers = {
-    #     'X-API-KEY': '0d15d366db01ca14061edb164e0704c8fa3243d3',
-    #     'Content-Type': 'application/json'
-    # }
-    # resp = requests.request("POST", url=url, data=payload, headers=headers).json()
-    # print(resp['organic'][0]['snippet'])
     tool = Tools()
     caption = tool.image_caption('assert/bus.jpg')
     print(caption)

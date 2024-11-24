@@ -24,7 +24,7 @@ if __name__ == '__main__':
     api_url = "http://127.0.0.1:8000/predict"
 
     # 要上传的图像文件路径
-    image_path = "assert/peoples-2018.jpeg"
+    image_path = "assert/bus.jpg"
 
     # 发送请求并获取结果
     result = send_prediction_request(image_path, api_url)
