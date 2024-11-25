@@ -8,6 +8,7 @@
 **已完成**：  
 - 一些视觉工具的demo。
 - 基于ollama调用本地大模型  
+- 用langchain封装了ollama，支持stream
 
 **ToDo**： 
 - 构建完整Agent应用

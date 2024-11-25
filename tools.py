@@ -99,3 +99,5 @@ if __name__ == '__main__':
     tool = Tools()
     caption = tool.image_caption('assert/bus.jpg')
     print(caption)
+    res = tool.google_search("天为什么是蓝色的")
+    print(res)
