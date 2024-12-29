@@ -5,13 +5,24 @@
 ### 开发过程
 计划基于langchain实现一个简单的agent，给LLM加入视觉的能力。  
 
-**已完成**：  
-- 一些视觉工具的demo。
-- 基于ollama调用本地大模型  
-- 用langchain封装了ollama，支持stream
+### 计划
+- [x] 实现工具api  
+- [x] 基于ollama调用本地大模型  
+- [x] 实现简单的非视觉类的agent  
+- [x] 用langchain封装了ollama，支持stream
+- [ ] 实现调用视觉工具的agent
+- [ ] 对agent进行封装
 
-**ToDo**： 
-- 构建完整Agent应用
+
+
+**已完成**：  
+- 现在已用ReAct构建了完整的Agent，通过调用工具初步实现了谷歌搜索和获取arxiv论文的基本功能。使用方法:
+```python
+# google search
+python test/google_search_agent.py
+# arxiv search
+python test/arxiv_api_agent.py
+```
 
 ### 相关论文
 - [React](https://arxiv.org/abs/2210.03629)  

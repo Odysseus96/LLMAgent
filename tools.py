@@ -63,6 +63,7 @@ class Tools:
         }
 
         response = requests.request("POST", url, headers=headers, data=payload).json()
+        print(response)
         return response['organic'][0]['snippet']
 
     def image_caption(self, image_path):
@@ -87,17 +88,17 @@ class Tools:
         return translated_text
 
 
-    def person_count(self, image_path):
-        # image = Image.open(image_path)
-        width, height = imagesize.get(image_path)
-        results = send_prediction_request(image_path, self.object_detection_url)
-        numbers = len(results['predictions'])
-        caption = f"这张图大小为({width}x{height}), 图中有{numbers}个人"
-        return caption
+def count_people_in_image(self, image_path):
+    # image = Image.open(image_path)
+    width, height = imagesize.get(image_path)
+    results = send_prediction_request(image_path, self.object_detection_url)
+    numbers = len(results['predictions'])
+    caption = f"这张图大小为({width}x{height}), 图中有{numbers}个人"
+    return caption
 
 if __name__ == '__main__':
     tool = Tools()
-    caption = tool.image_caption('assert/bus.jpg')
-    print(caption)
+    # caption = tool.image_caption('assert/bus.jpg')
+    # print(caption)
     res = tool.google_search("天为什么是蓝色的")
     print(res)
